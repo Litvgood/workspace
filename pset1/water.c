@@ -1,14 +1,9 @@
 #include <stdio.h>
+#include <cs50.h>
 
 int main(void)
 {
-    int minutes = 0;
     printf("minutes: ");
-    scanf("%d", &minutes);
-    while (minutes < 0 )
-    {
-        printf("Retry: ");
-        scanf("%d", &minutes);
-    }
+    int minutes = get_int();
     printf("bottles: %d\n", minutes * 12);
 }
