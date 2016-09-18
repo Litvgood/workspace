@@ -9,16 +9,7 @@ int main(int argc, string argv[])
     return 1;
   }
 	char s[100];
-	//int k = argv[1];
-    //printf("%d", k );
-	//scanf("%d", &k);
-
-	//getchar();
-
-	//fflush(stdin);
-    //printf("Enter String: ");
     fgets( s, 100, stdin);
-	//scanf(s);
 
 	int n = 0, r = 0, i;
 
