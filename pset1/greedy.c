@@ -1,32 +1,33 @@
 #include <stdio.h>
+#include <cs50.h>
 
-main(void)
+int main(void)
 {
     int i = 0;
-    float a;
     printf("enter the amount: \n");
-    scanf("%e", &a);
-    a = a * 100;
+    float k = get_float();
+    k = k * 100;
+    int a = k;
     while(a - 25 >= 0)
        {
-        a = ( a - 25 );
-        i++;
+            i++;
+            a = ( a - 25 );
         }
     while(a - 10 >= 0)
        {
-          a = ( a - 10 );
-          i++;
+            i++;
+            a = ( a - 10 );
        }
     while(a - 5 >= 0)
        {
-          a = ( a - 5 );
-          i++;
+            i++;
+            a = ( a - 5 );
        }
     while(a - 1 >= 0)
         {
-          a = ( a - 1 );
-          i++;
+            i++;
+            a = ( a - 1 );
         }
 
-    printf("%d\n",i);
+    printf("%i\n",i);
 }
