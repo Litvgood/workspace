@@ -4,10 +4,15 @@
 int main(void)
 {
     int i = 0;
+    int a;
     printf("enter the amount: \n");
-    float k = get_float();
-    k = k * 100;
-    int a = k;
+    do {
+        float k = get_float();
+        k = k * 100;
+        a = k;
+    }
+    while (a < 1);
+    
     while(a - 25 >= 0)
        {
             i++;
