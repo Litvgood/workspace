@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <cs50.h>
 
 int main(void)
 {
-    int i, j, H;
+    int i, j;
     printf("Height: ");
-    scanf("%d", &H);
+    int H = get_int();
     while ( (H < 0) || (H > 23))
     {
         printf("Retry: ");
