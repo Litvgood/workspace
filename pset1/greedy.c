@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cs50.h>
+#include <math.h> 
 
 int main(void)
 {
@@ -8,31 +9,32 @@ int main(void)
     printf("enter the amount: \n");
     do {
         float k = get_float();
+        
         k = k * 100;
-        a = k;
+        a = round(k);
     }
     while (a < 1);
     
-    while(a - 25 >= 0)
+    while(a >= 25)
        {
             i++;
             a = ( a - 25 );
         }
-    while(a - 10 >= 0)
+    while(a >= 10)
        {
             i++;
             a = ( a - 10 );
        }
-    while(a - 5 >= 0)
+    while(a >= 5)
        {
             i++;
             a = ( a - 5 );
        }
-    while(a - 1 >= 0)
+    while(a >= 1)
         {
             i++;
             a = ( a - 1 );
         }
 
-    printf("%i\n",i);
+    printf("%d\n",i);
 }
