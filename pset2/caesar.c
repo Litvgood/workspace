@@ -1,53 +1,45 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 #include <cs50.h>
 
 int main(int argc, string argv[])
 {
-    int k = atoi(argv[1]);
-    if( k <= 0 ) {
-    return 1;
-  }
-	char s[100];
-    fgets( s, 100, stdin);
-
-	int n = 0, r = 0, i;
-
-	for(i = 0; s[i] != '\0'; i++)
+	if (argc!=2)
 	{
-		if(s[i] >='a' && s[i] <='z')
-		{
-		n = 'z' - s[i];
-			if( k > n )
-			{
-				r = k - n - 1;
-				s[i] = 'a';
-				s[i] += r;
-			}
-			else
-				s[i] += k;
-		}
-		if(s[i] >='A' && s[i] <='Z')
-		{
-		n = 'Z' - s[i];
-			if( k > n )
-			{
-				r = k - n - 1;
-				s[i] = 'a';
-				s[i] += r;
-			}
-			else
-				s[i] += k;
-		}
+		printf("Erorr\n");
+		return 1;
 	}
 
-	int j;
-	for(j = 0; s[j] !='\0'; j++)
+	int number;
+
+	if((atoi(argv[1])) <= 26)
 	{
-		printf("%c", s[j]);
+		number = atoi(argv[1]);
+	}
+	else
+	{
+		number = atoi(argv[1])%26;
+	}
+	
+	string text = GetString();
+
+	for( int i = 0, symbols = strlen(text); i < symbols; i++ )
+	{
+		if ( isalpha(text[i]) )
+		{
+			if ( isupper(text[i]) )
+			{
+				text[i] = ( ((text[i] - 65 ) + number)%26 ) + 65;
+			}
+			else
+			{
+				text[i] = ( ((text[i] - 97 ) + number)%26 ) + 97;
+			}
+		}
+
 	}
 
-	printf("");
-
+	printf("%s\n", text);
 	return 0;
-	}
+}
