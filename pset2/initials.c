@@ -3,7 +3,6 @@
 int main()
 {
 	char stroka[50];
-	//gets(stroka);
 	fgets( stroka, 50, stdin);
 	int p;
 	for ( p = 0; stroka[p] == ' '; p++ ){
