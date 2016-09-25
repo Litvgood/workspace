@@ -6,8 +6,8 @@ int main(void)
 {
     int i = 0;
     int a;
-    printf("enter the amount: \n");
     do {
+        printf("enter the amount: \n");
         float k = get_float();
         
         k = k * 100;
