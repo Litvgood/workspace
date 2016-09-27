@@ -35,16 +35,16 @@ int main(int argc, string argv[])
 	{
 		code[i] = toupper(key[i]) - 65;
 	}
-
+	printf("plaintext: ");
 	string inputText = GetString();
 	int inputLength = strlen(inputText);
 	int keyCount = 0;
-
+	
 	for (int i = 0; i < inputLength; i++)
 	{
 		if ( isalpha(inputText[i]))
 		{
-			printf("%c", coding(inputText[i], code[keyCount] ));
+			inputText[i] = coding(inputText[i], code[keyCount] );
 			if ( keyCount < length - 1)
 			{
 				keyCount ++;
@@ -54,13 +54,9 @@ int main(int argc, string argv[])
 				keyCount = 0;
 			}
 		}
-		else
-		{
-			printf("%c", inputText[i] );
-		}
 	}
 	
-    printf( "\n" );
+	printf("ciphertext: %s\n", inputText);
 	return 0;
 }
 
