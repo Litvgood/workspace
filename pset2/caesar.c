@@ -17,11 +17,11 @@ int main(int argc, string argv[])
 	{
 		number = atoi(argv[1]);
 	}
-	else
+	else 
 	{
 		number = atoi(argv[1])%26;
 	}
-	
+	printf("plaintext: ");
 	string text = GetString();
 
 	for( int i = 0, symbols = strlen(text); i < symbols; i++ )
@@ -39,7 +39,6 @@ int main(int argc, string argv[])
 		}
 
 	}
-
-	printf("%s\n", text);
+	printf("ciphertext: %s\n", text);
 	return 0;
 }
