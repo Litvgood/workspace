@@ -30,7 +30,7 @@ int main(int argc, string argv[])
         printf("Usage: generate n [s]\n");
         return 1;
     }
-
+ 
     // TODO: the number of values
     int n = atoi(argv[1]);
 
